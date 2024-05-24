@@ -66,8 +66,8 @@ export default function App() {
                           {contact.first} {contact.last}
                         </>
                       ) : (
-                        <i>No image</i>
-                      )} {" "}
+                        <i>No Name</i>
+                      )}{" "}
                       {contact.favorite ? (
                         <span>★</span>
                       ) : null}
