@@ -1,7 +1,15 @@
-import { Form } from "@remix-run/react";
+import { json } from "@remix-run/node";
+import { Form, useLoaderData } from "@remix-run/react";
 import type { FunctionComponent } from "react";
 
 import type { ContactRecord } from "../data";
+
+import { getContact } from "../data";
+
+export const loader = async ({ params }) => {
+  const contact = await getContact(params.contactId);
+  return json({ contact });
+}
 
 export default function Contact() {
   const contact = {
